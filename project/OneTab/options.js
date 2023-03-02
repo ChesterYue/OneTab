@@ -3,7 +3,7 @@
  */
 function save() {
     const obj = {
-        inputUrls: document.getElementById('textarea-urls').value,
+        inputUrlString: document.getElementById('textarea-urls').value,
         notificationEnabled: document.getElementById('checkbox-notification').checked,
     };
     chrome.storage.sync.set(obj, function() {
@@ -18,12 +18,13 @@ document.getElementById('button-save').addEventListener('click', save);
  */
 function load() {
     const keyList = [
-        'inputUrls',
+        'inputUrlString',
         'notificationEnabled',
     ];
     chrome.storage.sync.get(keyList, function(obj) {
-        document.getElementById('textarea-urls').value = obj['inputUrls'];
-        document.getElementById('checkbox-notification').checked = obj['notificationEnabled'];
+        console.log(`${JSON.stringify(obj)}`);
+        document.getElementById('textarea-urls').value = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
+        document.getElementById('checkbox-notification').checked = obj['notificationEnabled'] !== undefined ? obj['notificationEnabled'] : true;
     });
 }
 window.addEventListener('load', load);
