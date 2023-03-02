@@ -7,17 +7,16 @@
 </head>
 
 <body>
-    <table>
-        <tr>
-            <td>Notification:</td>
-            <td><input type="checkbox" id="enableNotification" checked></td>
-        </tr>
-        <tr>
-            <td>URL:</td>
-            <td><input type="text" id="urlField" size="50"></td>
-            <td><button id="saveButton">Save</button></td>
-        </tr>
-    </table>
+    <div>urls to filter:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;* each per line</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;* example: https://www.google.com</div>
+    <div><textarea id="textarea-urls" rows="10" cols="40"></textarea></div>
+    <div>&nbsp;</div>
+
+    <div>notification: <input type="checkbox" id="checkbox-notification"></div>
+    <div>&nbsp;</div>
+
+    <div><button id="button-save">save</button></div>
 
     <script src="options.js"></script>
 </body>
