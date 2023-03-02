@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "OneTab",
-    "description": "To filter only one tab opened with same domain.",
+    "description": "only one tab opened with same domain",
     "version": "1.0",
     "icons": {
         "128": "128.png"
@@ -15,7 +15,13 @@
         }
     },
     "permissions": [
-        "unlimitedStorage",
-        "notifications"
-    ]
+        "tabs",
+        "storage",
+        "notifications",
+        "webRequest"
+    ],
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "daemon.js"
+    }
 }
