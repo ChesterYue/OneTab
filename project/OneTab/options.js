@@ -2,12 +2,11 @@
  * save input
  */
 function save() {
-    const inputUrls = document.getElementById('textarea-urls').value;
-    const notificationEnabled = document.getElementById('checkbox-notification').checked;
-    chrome.storage.sync.set({
-        inputUrls: inputUrls,
-        notificationEnabled: notificationEnabled,
-    }, function() {
+    const obj = {
+        inputUrls: document.getElementById('textarea-urls').value,
+        notificationEnabled: document.getElementById('checkbox-notification').checked,
+    };
+    chrome.storage.sync.set(obj, function() {
         alert('options saved');
     });
 }
@@ -18,11 +17,13 @@ document.getElementById('button-save').addEventListener('click', save);
  * load from storage
  */
 function load() {
-    chrome.storage.sync.get(['inputUrls', 'notificationEnabled'], function(obj) {
-        const inputUrls = obj['inputUrls'];
-        const notificationEnabled = obj['notificationEnabled'];
-        document.getElementById('textarea-urls').value = inputUrls;
-        document.getElementById('checkbox-notification').checked = notificationEnabled;
+    const keyList = [
+        'inputUrls',
+        'notificationEnabled',
+    ];
+    chrome.storage.sync.get(keyList, function(obj) {
+        document.getElementById('textarea-urls').value = obj['inputUrls'];
+        document.getElementById('checkbox-notification').checked = obj['notificationEnabled'];
     });
 }
 window.addEventListener('load', load);
