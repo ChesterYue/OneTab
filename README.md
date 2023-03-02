@@ -1,3 +1,3 @@
 # OneTab
 
-extension for chrome to filter only one tab opened with same domain.
+chrome extension, only one tab open with same configured domains.
