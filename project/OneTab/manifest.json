@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "OneTab",
+    "description": "To filter only one tab opened with same domain.",
+    "version": "1.0",
+    "icons": {
+        "128": "128.png"
+    },
+    "app": {
+        "urls": [
+            "http://certification.googleapps.com/app-info/"
+        ],
+        "launch": {
+            "web_url": "http://certification.googleapps.com/"
+        }
+    },
+    "permissions": [
+        "unlimitedStorage",
+        "notifications"
+    ]
+}
