@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "OneTab",
-    "description": "only one tab opened with same domain",
-    "version": "1.0",
+    "description": "only one tab open with same configured domains.",
+    "version": "2023.03.03.04",
     "icons": {
         "128": "128.png"
     },
