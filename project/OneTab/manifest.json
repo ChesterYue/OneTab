@@ -6,14 +6,6 @@
     "icons": {
         "128": "128.png"
     },
-    "app": {
-        "urls": [
-            "http://certification.googleapps.com/app-info/"
-        ],
-        "launch": {
-            "web_url": "http://certification.googleapps.com/"
-        }
-    },
     "permissions": [
         "tabs",
         "storage",
@@ -22,6 +14,6 @@
     ],
     "options_page": "options.html",
     "background": {
-        "service_worker": "daemon.js"
+        // "service_worker": "daemon.js"
     }
 }
