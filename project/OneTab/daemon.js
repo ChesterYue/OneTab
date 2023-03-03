@@ -19,12 +19,12 @@ chrome.webRequest.onSendHeaders.addListener(onSendHeadersCallback, onSendHeaders
 function readStorage(details) {
     const keyList = [
         'inputUrlString',
-        'notificationEnabled',
+        'notificationChecked',
     ];
     chrome.storage.sync.get(keyList, function(obj) {
         const inputUrlString = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
-        const notificationEnabled = obj['notificationEnabled'] !== undefined ? obj['notificationEnabled'] : true;
-        // console.log(`inputUrlString:${inputUrlString}, notificationEnabled:${notificationEnabled}`);
+        const notificationChecked = obj['notificationChecked'] !== undefined ? obj['notificationChecked'] : true;
+        // console.log(`inputUrlString:${inputUrlString}, notificationChecked:${notificationChecked}`);
 
         const inputUrlList = inputUrlString.split('\n').map((url) => url.trim());
         // console.log(`inputUrlList:${inputUrlList}`);
@@ -39,7 +39,7 @@ function readStorage(details) {
                 queryTab(details, inputUrl, function success(details, tabId) {
                     updateTab(details.url, tabId);
                     removeTab(details.tabId);
-                    if (notificationEnabled) {
+                    if (notificationChecked) {
                         createNotification(details.url);
                     }
                 });

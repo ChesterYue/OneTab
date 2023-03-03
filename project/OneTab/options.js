@@ -4,13 +4,13 @@
 function save() {
     const obj = {
         inputUrlString: document.getElementById('urls').value,
-        notificationEnabled: document.getElementById('checkbox-notification').checked,
+        notificationChecked: document.getElementById('notification-checked').checked,
     };
     chrome.storage.sync.set(obj, function() {
-        alert('options saved');
+        alert('Options Saved');
     });
 }
-document.getElementById('button-save').addEventListener('click', save);
+document.getElementById('save').addEventListener('click', save);
 
 
 /**
@@ -19,12 +19,12 @@ document.getElementById('button-save').addEventListener('click', save);
 function load() {
     const keyList = [
         'inputUrlString',
-        'notificationEnabled',
+        'notificationChecked',
     ];
     chrome.storage.sync.get(keyList, function(obj) {
         console.log(`${JSON.stringify(obj)}`);
         document.getElementById('urls').value = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
-        document.getElementById('checkbox-notification').checked = obj['notificationEnabled'] !== undefined ? obj['notificationEnabled'] : true;
+        document.getElementById('notification-checked').checked = obj['notificationChecked'] !== undefined ? obj['notificationChecked'] : true;
     });
 }
 window.addEventListener('load', load);

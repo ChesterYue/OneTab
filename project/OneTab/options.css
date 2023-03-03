@@ -58,7 +58,7 @@ td {
     width: 1px;
     white-space: nowrap;
     margin-right: 10px;
-    min-width: 130px;
+    min-width: 100px;
     padding-top: 3px;
     vertical-align: top;
 }
@@ -111,4 +111,30 @@ pre {
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     display: block;
     white-space: pre;
+}
+
+#notification-checked {
+    margin-top: 4px;
+    margin-left: 0px;
+}
+
+button {
+    white-space: nowrap;
+    width: 80px;
+    color: #444;
+    font: inherit;
+    text-shadow: 0 1px 0 #f0f0f0;
+    height: 20px;
+    font-size: 12px;
+    padding: 0 10px;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 0em;
 }
