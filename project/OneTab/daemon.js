@@ -22,7 +22,7 @@ function readStorage(details) {
         'notificationChecked',
     ];
     chrome.storage.sync.get(keyList, function(obj) {
-        const inputUrlString = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
+        const inputUrlString = obj['inputUrlString'] !== undefined ? obj['inputUrlString'] : '';
         const notificationChecked = obj['notificationChecked'] !== undefined ? obj['notificationChecked'] : true;
         console.log(`inputUrlString:${inputUrlString}, notificationChecked:${notificationChecked}`);
 
