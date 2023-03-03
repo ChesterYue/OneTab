@@ -6,6 +6,7 @@ function save() {
         inputUrlString: document.getElementById('urls').value,
         notificationChecked: document.getElementById('notification-checked').checked,
     };
+    console.log(`save, ${JSON.stringify(obj)}`);
     chrome.storage.sync.set(obj, function() {
         alert('Options Saved');
     });
@@ -22,8 +23,8 @@ function load() {
         'notificationChecked',
     ];
     chrome.storage.sync.get(keyList, function(obj) {
-        console.log(`${JSON.stringify(obj)}`);
-        document.getElementById('urls').value = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
+        console.log(`load, ${JSON.stringify(obj)}`);
+        document.getElementById('urls').value = obj['inputUrlString'] !== undefined ? obj['inputUrlString'] : '';
         document.getElementById('notification-checked').checked = obj['notificationChecked'] !== undefined ? obj['notificationChecked'] : true;
     });
 }
