@@ -39,11 +39,10 @@ function readStorage(details) {
                 queryTab(details, inputUrl, function success(details, tabId) {
                     updateTab(details.url, tabId);
                     removeTab(details.tabId);
+                    if (notificationEnabled) {
+                        createNotification(details.url);
+                    }
                 });
-
-                if (notificationEnabled) {
-                    createNotification(details.url);
-                }
             }
         }
     });
@@ -111,7 +110,7 @@ function queryTab(details, inputUrl, success) {
  * @param {string} tabId
  */
 function updateTab(url, tabId) {
-    console.log(`updateTab ${url} ${tabId}`);
+    console.log(`updateTab, url:${url}, tabId:${tabId}`);
     chrome.tabs.update(tabId, {
         active: true,
         url: url,
@@ -125,6 +124,7 @@ function updateTab(url, tabId) {
  * @param {string} tabId
  */
 function removeTab(tabId) {
+    console.log(`removeTab, tabId:${tabId}`);
     chrome.tabs.remove(tabId);
 }
 
@@ -143,6 +143,6 @@ function createNotification(url) {
         message: url,
         priority: 1,
     };
-    console.log(`createNotification ${JSON.stringify(options)}`);
+    console.log(`createNotification, options:${JSON.stringify(options)}`);
     chrome.notifications.create(notificationId, options);
 }
