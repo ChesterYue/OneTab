@@ -4,7 +4,7 @@
  * @param {object} details
  */
 function onSendHeadersCallback(details) {
-    // console.log(`details:${JSON.stringify(details)}`);
+    console.log(`details:${JSON.stringify(details)}`);
     readStorage(details);
 }
 const onSendHeadersFilter = {urls: ['<all_urls>']};
@@ -37,6 +37,10 @@ function readStorage(details) {
             const matchResult = matchUrl(details.url, inputUrl);
             if (matchResult) {
                 queryTab(details, inputUrl, function success(details, tabId) {
+                    if (details.tabId === -1) { // js background send trigger onSendHeaders, example: https://unbug.github.io/codelf/#test
+                        return;
+                    }
+
                     updateTab(details.url, tabId);
                     removeTab(details.tabId);
                     if (notificationChecked) {
@@ -111,6 +115,9 @@ function queryTab(details, inputUrl, success) {
  */
 function updateTab(url, tabId) {
     console.log(`updateTab, url:${url}, tabId:${tabId}`);
+    if (tabId === -1) {
+        return;
+    }
     chrome.tabs.update(tabId, {
         active: true,
         url: url,
@@ -125,6 +132,9 @@ function updateTab(url, tabId) {
  */
 function removeTab(tabId) {
     console.log(`removeTab, tabId:${tabId}`);
+    if (tabId === -1) {
+        return;
+    }
     chrome.tabs.remove(tabId);
 }
 
