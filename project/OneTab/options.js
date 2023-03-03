@@ -3,7 +3,7 @@
  */
 function save() {
     const obj = {
-        inputUrlString: document.getElementById('textarea-urls').value,
+        inputUrlString: document.getElementById('urls').value,
         notificationEnabled: document.getElementById('checkbox-notification').checked,
     };
     chrome.storage.sync.set(obj, function() {
@@ -23,7 +23,7 @@ function load() {
     ];
     chrome.storage.sync.get(keyList, function(obj) {
         console.log(`${JSON.stringify(obj)}`);
-        document.getElementById('textarea-urls').value = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
+        document.getElementById('urls').value = obj['inputUrlString'] !== 'undefined' ? obj['inputUrlString'] : '';
         document.getElementById('checkbox-notification').checked = obj['notificationEnabled'] !== undefined ? obj['notificationEnabled'] : true;
     });
 }

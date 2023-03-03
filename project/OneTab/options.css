@@ -1,0 +1,114 @@
+body {
+    font: 14px "DejaVu Sans", "Arial", sans-serif;
+    color: #303942;
+    margin: 0 auto;
+}
+
+div#wrapper {
+    width: 800px;
+    margin-left: 35px;
+}
+
+header {
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0 15px 0;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    font-size: 14px;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 0 23px;
+    border-color: grey;
+    font-variant: normal;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    padding: 0;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.caption {
+    width: 1px;
+    white-space: nowrap;
+    margin-right: 10px;
+    min-width: 130px;
+    padding-top: 3px;
+    vertical-align: top;
+}
+
+textarea {
+    width: 100%;
+    min-height: 140px;
+    white-space: pre;
+    border: 1px solid #bfbfbf;
+    border-radius: 2px;
+    color: #444;
+    background-color: white;
+    font: inherit;
+    padding: 3px;
+    resize: vertical;
+    box-sizing: border-box;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    overflow-wrap: break-word;
+    column-count: initial !important;
+    margin: 0em;
+}
+
+td#input {
+    width: 400px;
+}
+
+.detail {
+    font-size: 12px;
+    line-height: 16px;
+    color: #979ca0;
+    margin-left: 20px;
+    display: block;
+}
+
+pre {
+    margin: 5px;
+    border-left: 1px solid #eee;
+    padding-left: 5px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    display: block;
+    white-space: pre;
+}

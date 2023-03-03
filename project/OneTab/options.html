@@ -1,16 +1,45 @@
+<!-- mock from Vimium Options -->
+
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
-    <title>options</title>
+    <title>OneTab Options</title>
+    <link rel="stylesheet" type="text/css" href="options.css">
 </head>
 
 <body>
+    <div id="wrapper">
+        <header>OneTab Options</header>
+        <table id="options">
+            <tbody>
+                <tr>
+                    <td class="caption">URLs</td>
+                    <td id="input">
+                        <textarea id="urls" type="text" tabindex="1"></textarea>
+                    </td>
+                    <td class="detail">
+                        1. url with https:// or http:// prefix; <br>
+                        2. one url per line; <br>
+
+                        <br> example:
+                        <pre class="example">
+https://youdao.com/
+https://translate.google.com/
+https://github.com/ </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--
     <div>urls to filter:</div>
     <div>&nbsp;&nbsp;&nbsp;&nbsp;* each per line</div>
     <div>&nbsp;&nbsp;&nbsp;&nbsp;* example: https://translate.google.com/</div>
-    <div><textarea id="textarea-urls" rows="10" cols="40"></textarea></div>
+    <div><textarea id="urls" rows="10" cols="40"></textarea></div>
     <div>&nbsp;</div>
 
     <div>notification: <input type="checkbox" id="checkbox-notification" checked></div>
@@ -19,6 +48,7 @@
     <div><button id="button-save">save</button></div>
 
     <script src="options.js"></script>
+    -->
 </body>
 
 </html>
