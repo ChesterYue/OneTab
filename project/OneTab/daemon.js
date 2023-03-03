@@ -24,10 +24,10 @@ function readStorage(details) {
     chrome.storage.sync.get(keyList, function(obj) {
         const inputUrlString = obj['inputUrlString'] !== undefined ? obj['inputUrlString'] : '';
         const notificationChecked = obj['notificationChecked'] !== undefined ? obj['notificationChecked'] : true;
-        console.log(`inputUrlString:${inputUrlString}, notificationChecked:${notificationChecked}`);
+        // console.log(`inputUrlString:${inputUrlString}, notificationChecked:${notificationChecked}`);
 
         const inputUrlList = inputUrlString.split('\n').map((url) => url.trim());
-        console.log(`inputUrlList:${inputUrlList}`);
+        // console.log(`inputUrlList:${inputUrlList}`);
 
         for (inputUrl of inputUrlList) {
             if (inputUrl.length === 0) {
