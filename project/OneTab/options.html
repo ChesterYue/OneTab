@@ -20,12 +20,17 @@
                     <td id="input">
                         <textarea id="urls" type="text" tabindex="1"></textarea>
                     </td>
-                    <td class="detail">
-                        1. url with https:// or http:// prefix; <br>
-                        2. one url per line; <br>
+                    <td class="description">
+                        If a new URL is in options configured URLs. <br>
+                        The new URL will open in the already existing tab. <br>
 
-                        <br> example:
-                        <pre class="example">
+                        <br> Rules:
+                        <pre>
+1. One url per line.
+2. Url with https:// or http:// prefix. </pre>
+
+                        <br> Examples:
+                        <pre>
 https://youdao.com/
 https://translate.google.com/
 https://github.com/ </pre>
@@ -37,6 +42,9 @@ https://github.com/ </pre>
                     <td id="input">
                         <input type="checkbox" id="notification-checked" checked>
                     </td>
+                    <td class="description">
+                        Show notification when OneTab triggered on URL. <br>
+                    </td>
                 </tr>
 
                 <tr id="empty">
@@ -47,6 +55,9 @@ https://github.com/ </pre>
                     <td class="caption">Save Options</td>
                     <td id="input">
                         <button id="save">Save</button>
+                    </td>
+                    <td class="description">
+                        Save options locally. <br>
                     </td>
                 </tr>
             </tbody>

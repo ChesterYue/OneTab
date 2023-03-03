@@ -64,7 +64,7 @@ td {
 
 textarea {
     width: 100%;
-    min-height: 140px;
+    min-height: 190px;
     white-space: pre;
     border: 1px solid #bfbfbf;
     border-radius: 2px;
@@ -95,7 +95,7 @@ td#input {
     width: 400px;
 }
 
-.detail {
+.description {
     font-size: 12px;
     line-height: 16px;
     color: #979ca0;
