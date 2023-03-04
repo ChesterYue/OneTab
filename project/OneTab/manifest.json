@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "OneTab",
-    "description": "only one tab open with same configured domains.",
-    "version": "2023.03.03.04",
+    "name": "OneTab: Multiple URLs Restrict",
+    "description": "Restrict URLs which in your configured list to open in the already existing tab. Instead of open the URL in a new tab.",
+    "version": "2023.03.04.20",
     "icons": {
         "128": "128.png"
     },
