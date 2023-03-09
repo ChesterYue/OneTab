@@ -22,7 +22,7 @@ By right click on the extension icon then click options, you can:
 
 ### v2023.03.04.20
 
-* [U] optimize options page ;
+* [U] optimize options page;
 * [F] fix redundant notifications;
 * [F] fix daemon.js undefined bug;
 * [F] fix js background trigger onSendHeader;
