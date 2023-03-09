@@ -2,10 +2,14 @@
 
 ## Introduction
 
-Chrome extension.
+Chrome extension. Restrict opening tabs with the same domain name.
 
-Restrict URLs which in your configured list to open in the already existing tab.
-Instead of open the URL in a new tab.
+## Feature
+
+When open a new URL which in your configured list:
+
+* If there is a tab already opened with the same domain name. The tab will be refreshed to the new URL. Instead of the new URL open in another new tab.
+* If there is no tab opened with the same domain name. The new URL will open in a new tab as usual.
 
 ## Option
 
