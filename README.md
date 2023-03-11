@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Chrome extension. Restrict opening tabs with the same domain name.
+[Chrome extension](https://chrome.google.com/webstore/detail/onetab-multiple-urls-rest/aaldlnbbklgcjgjejkfjfefamglajcje).
+
+Restrict opening tabs with the same domain name.
 
 ## Feature
 
