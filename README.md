@@ -8,19 +8,22 @@ Restrict opening tabs with the same domain name.
 
 ## Feature
 
+### Restrict URL
+
 When open a new URL which in your configured list:
 
 * If there is a tab already opened with the same domain name. The tab will be refreshed to the new URL. Instead of the new URL open in another new tab.
 * If there is no tab opened with the same domain name. The new URL will open in a new tab as usual.
 
-## Option
+### Extract URL
 
-By right click on the extension icon then click options, you can:
-
-1. configure restricted URL list.
-2. enable notification in options to show notification when this triggered.
+If the input to address bar is matched by regexps configured in options. The tab will open the url matched.
 
 ## Change Log
+
+### v2023.06.13.23
+
+* [A] extract url;
 
 ### v2023.03.04.20
 
