@@ -3,8 +3,13 @@
  */
 function save() {
     const obj = {
-        inputUrlString: document.getElementById('urls').value,
-        notificationChecked: document.getElementById('notification-checked').checked,
+        restrict: {
+            urlString: document.getElementById('restrict-urls').value,
+            notificationChecked: document.getElementById('restrict-notification-checked').checked,
+        },
+        extract: {
+            urlRegexpString: document.getElementById('extract-url-regexps').value,
+        }
     };
     console.log(`save, ${JSON.stringify(obj)}`);
     chrome.storage.sync.set(obj, function() {
@@ -19,13 +24,28 @@ document.getElementById('save').addEventListener('click', save);
  */
 function load() {
     const keyList = [
-        'inputUrlString',
-        'notificationChecked',
+        'restrict',
+        'extract',
     ];
     chrome.storage.sync.get(keyList, function(obj) {
         console.log(`load, ${JSON.stringify(obj)}`);
-        document.getElementById('urls').value = obj['inputUrlString'] !== undefined ? obj['inputUrlString'] : '';
-        document.getElementById('notification-checked').checked = obj['notificationChecked'] !== undefined ? obj['notificationChecked'] : true;
+
+        const restrict = obj['restrict'];
+        if (restrict !== undefined) {
+            if (restrict.urlString !== undefined) {
+                document.getElementById('restrict-urls').value = restrict.urlString;
+            }
+            if (restrict.notificationChecked !== undefined) {
+                document.getElementById('restrict-notification-checked').checked = restrict.notificationChecked;
+            }
+        }
+
+        const extract = obj['extract'];
+        if (extract !== undefined) {
+            if (extract.urlRegexpString !== undefined) {
+                document.getElementById('extract-url-regexps').value = extract.urlRegexpString;
+            }
+        }
     });
 }
 window.addEventListener('load', load);

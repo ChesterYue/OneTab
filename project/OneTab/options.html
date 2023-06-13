@@ -15,10 +15,16 @@
         <header>OneTab Options</header>
         <table id="options">
             <tbody>
+                <!-- Restrict URL -->
+                <tr class="section-header">
+                    <td colspan="3">
+                    Restrict URL
+                    </td>
+                </tr>
                 <tr>
                     <td class="caption">URLs</td>
                     <td id="input">
-                        <textarea id="urls" type="text" tabindex="1"></textarea>
+                        <textarea id="restrict-urls" type="text" tabindex="1"></textarea>
                     </td>
                     <td class="description">
                         If a new URL is in options configured URLs. <br>
@@ -39,10 +45,41 @@ https://translate.google.com/ </pre>
                 <tr>
                     <td class="caption">Notification</td>
                     <td id="input">
-                        <input type="checkbox" id="notification-checked" checked>
+                        <input type="checkbox" id="restrict-notification-checked" checked>
                     </td>
                     <td class="description">
                         Show notification when OneTab triggered on URL. <br>
+                    </td>
+                </tr>
+
+                <tr id="empty">
+                    <td class="caption"></td>
+                </tr>
+
+                <!-- Extract URL -->
+                <tr class="section-header">
+                    <td colspan="3">
+                    Extract URL
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caption">URL RegExps</td>
+                    <td id="input">
+                        <textarea id="extract-url-regexps" type="text" tabindex="1"></textarea>
+                    </td>
+                    <td class="description">
+                        If the input to address bar is matched by regexps. <br>
+                        The tab will open the url matched. <br>
+
+                        <br> Rules:
+                        <pre>
+1. One url regexp per line. </pre>
+
+                        <br> Examples:
+                        <pre>
+(http%3A%2F%2Fxhslink\.com%2F[0-9|a-z|A-Z]{6})%EF%BC%8C
+(https%3A%2F%2Fb23\.tv%2F[0-9|a-z|A-Z]{7})
+(https%3A%2F%2Fv\.douyin\.com%2F[0-9|a-z|A-Z]{7})%2F </pre>
                     </td>
                 </tr>
 

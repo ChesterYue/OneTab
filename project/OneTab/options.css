@@ -5,14 +5,13 @@ body {
 }
 
 div#wrapper {
-    width: 800px;
+    width: 1000px;
     margin-left: 35px;
 }
 
 header {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: normal;
-    border-bottom: 1px solid #eee;
     padding: 20px 0 15px 0;
     width: 100%;
 }
@@ -54,6 +53,12 @@ td {
     vertical-align: inherit;
 }
 
+.section-header {
+    padding-top: 24px;
+    font-size: 18px;
+    border-top: 1px solid #eee;
+}
+
 .caption {
     width: 1px;
     white-space: nowrap;
@@ -92,7 +97,7 @@ textarea {
 }
 
 td#input {
-    width: 400px;
+    width: 600px;
 }
 
 .description {
